@@ -20,7 +20,7 @@ function Question(props) {
 function NextQuestion() {
   return (
     <div className="nextquestion">
-      <button>This is a funny button</button>
+      <button>This is a not funny button</button>
     </div>
   );
 }
