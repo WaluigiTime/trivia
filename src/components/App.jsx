@@ -3,15 +3,25 @@ import "../css/App.css";
 import data from "../sample_data.json";
 
 function App() {
-  let questionNumber = 2;
+  let [isAnswered, setIsAnswered] = useState(false);
+  // { isAnswered ? correct answer : "Click to reveal answer" }
+  let questionNumber = 0;
   return (
     <div className="app">
       Trivia
+      <button onClick={() => setIsAnswered(true)}>
+        {isAnswered
+          ? data[questionNumber].question.choices[
+              data[questionNumber].question.correct_choice_index
+            ]
+          : "Answer"}
+      </button>
       <Question data={data} questionNumber={questionNumber} />
       <NextQuestion />
     </div>
   );
 }
+// Create button element with setIsAnswered for onClick
 
 function Question(props) {
   return (
@@ -29,7 +39,11 @@ function Question(props) {
 }
 
 function Answer(props) {
-  return <div className="answer">Choice: {props.text}</div>;
+  return (
+    <div className="answer">
+      Choice: <button>{props.text}</button>
+    </div>
+  );
 }
 
 function NextQuestion() {

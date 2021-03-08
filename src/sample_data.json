@@ -19,7 +19,7 @@
     "question": {
       "choices": ["mario", "waluigi", "hat kid", "emily herself"],
       "correct_choice_index": 1,
-      "text": "what's the character i want in smash the most?",
+      "text": "what's the character I want in smash the most?",
       "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
     }
   }
